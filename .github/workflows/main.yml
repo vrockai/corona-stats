@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js 12.x
+    - name: Use Node.js 11.x
       uses: actions/setup-node@v1
       with:
-        node-version: 12.x
+        node-version: 11.x
     - run: npm install
     - run: npm start
     - run: curl https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv --output time_series_19-covid-Confirmed.csv
