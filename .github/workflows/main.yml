@@ -9,6 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - run: |
+        sudo apt update
+        sudo apt install libgif-dev
     - uses: actions/checkout@v2
     - name: Use Node.js 11.x
       uses: actions/setup-node@v1
