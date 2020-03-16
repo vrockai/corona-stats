@@ -1,8 +1,8 @@
 const env = process.env;
 
-const labelCases = env['COR_LABEL_CASES'] || 'Pripadov';
-const labelRecoveries = env['COR_LABEL_RECOVERIES'] || 'Vyliecenych';
-const labelDeaths = env['COR_LABEL_DEATHS'] || 'Smrti';
+const labelCases = env['COR_LABEL_CASES'] || 'Prípadov';
+const labelRecoveries = env['COR_LABEL_RECOVERIES'] || 'Vyliečených';
+const labelDeaths = env['COR_LABEL_DEATHS'] || 'Smrtí';
 
 function drawChart(chartNode, timeAxis, dataConfirmed, dataRecovered, dataDeaths) {
   return chartNode.drawChart({
@@ -32,7 +32,13 @@ function drawChart(chartNode, timeAxis, dataConfirmed, dataRecovered, dataDeaths
         fill: false,
       }]
     },
-    options: {},
+    options: { legend: {
+        display: true,
+        labels: {
+          fontColor: '#ffffff',
+          fontSize: 16
+        }
+      }},
   })
 }
 
