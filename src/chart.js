@@ -12,7 +12,7 @@ function drawChart(chartNode, timeAxis, dataConfirmed, dataRecovered, dataDeaths
   };
 
   const ticks = {
-    fontColor: '#323232',
+    fontColor: '#656565',
   };
 
   return chartNode.drawChart({
