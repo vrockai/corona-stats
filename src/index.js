@@ -6,7 +6,7 @@ const {drawChart} = require('./chart');
 const {getCsvRowPromise} = require('./csv');
 
 const width = env['COR_WIDTH'] || 1200;
-const height = env['COR_HEIGHT'] || 800;
+const height = env['COR_HEIGHT'] || 600;
 const country = env['COR_COUNTRY'] || 'Slovakia';
 
 
