@@ -5,6 +5,16 @@ const labelRecoveries = env['COR_LABEL_RECOVERIES'] || 'Vyliečených';
 const labelDeaths = env['COR_LABEL_DEATHS'] || 'Smrtí';
 
 function drawChart(chartNode, timeAxis, dataConfirmed, dataRecovered, dataDeaths) {
+  const gridLines = {
+    color: '#323232',
+    lineWidth: 2,
+    borderDash: [5, 5],
+  };
+
+  const ticks = {
+    fontColor: '#323232',
+  };
+
   return chartNode.drawChart({
     type: 'line',
     data: {
@@ -19,26 +29,32 @@ function drawChart(chartNode, timeAxis, dataConfirmed, dataRecovered, dataDeaths
       }, {
         label: labelRecoveries,
         data: dataRecovered,
-        backgroundColor:'#ffffff',
+        backgroundColor: '#ffffff',
         borderColor: '#ffffff',
         borderWidth: 4,
         fill: false,
       }, {
         label: labelDeaths,
         data: dataDeaths,
-        backgroundColor:'#fb0000',
+        backgroundColor: '#fb0000',
         borderColor: '#fb0000',
         borderWidth: 4,
         fill: false,
       }]
     },
-    options: { legend: {
+    options: {
+      scales: {
+        xAxes: [{gridLines, ticks}],
+        yAxes: [{gridLines, ticks}],
+      },
+      legend: {
         display: true,
         labels: {
           fontColor: '#ffffff',
           fontSize: 16
-        }
-      }},
+        },
+      }
+    },
   })
 }
 
