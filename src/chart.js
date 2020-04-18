@@ -12,6 +12,10 @@ function drawChart(chartNode, timeAxis, dataConfirmed, dataRecovered, dataDeaths
   };
 
   const ticks = {
+    fontColor: '#808080'
+  };
+  
+  const yticks = {
     fontColor: '#808080',
          callback: function (value, index, values) {
              return Number(value.toString());//pass tick values as a string into Number function
@@ -48,16 +52,7 @@ function drawChart(chartNode, timeAxis, dataConfirmed, dataRecovered, dataDeaths
     options: {
       scales: {
         xAxes: [{gridLines, ticks}],
-        yAxes: [{gridLines, ticks, type: 'logarithmic',
-                afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
-        chartObj.ticks = [];
-        chartObj.ticks.push(0);
-        chartObj.ticks.push(1);
-        chartObj.ticks.push(10);
-        chartObj.ticks.push(100);
-        chartObj.ticks.push(1000);
-        chartObj.ticks.push(10000);
-    }}],
+        yAxes: [{gridLines, yticks, type: 'logarithmic'],
       },
       legend: {
         display: true,
