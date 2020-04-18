@@ -45,7 +45,7 @@ function drawChart(chartNode, timeAxis, dataConfirmed, dataRecovered, dataDeaths
     options: {
       scales: {
         xAxes: [{gridLines, ticks}],
-        yAxes: [{gridLines, ticks}],
+        yAxes: [{gridLines, ticks, type: 'logarithmic'}],
       },
       legend: {
         display: true,
