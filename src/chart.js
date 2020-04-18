@@ -52,7 +52,7 @@ function drawChart(chartNode, timeAxis, dataConfirmed, dataRecovered, dataDeaths
     options: {
       scales: {
         xAxes: [{gridLines, ticks}],
-        yAxes: [{gridLines, yticks, type: 'logarithmic', afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
+        yAxes: [{gridLines, ticks: yticks, type: 'logarithmic', afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
         chartObj.ticks = [];
         chartObj.ticks.push(0);
         chartObj.ticks.push(1);
