@@ -13,6 +13,11 @@ function drawChart(chartNode, timeAxis, dataConfirmed, dataRecovered, dataDeaths
 
   const ticks = {
     fontColor: '#808080',
+             min: 0.1, //minimum tick
+         max: 1000, //maximum tick
+         callback: function (value, index, values) {
+             return Number(value.toString());//pass tick values as a string into Number function
+         }
   };
 
   return chartNode.drawChart({
